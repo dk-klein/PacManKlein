@@ -116,8 +116,8 @@ namespace PacManKlein
             redGhost.Left = 193;
             redGhost.Top = 66;
 
-            pinkGhost.Left = 478;
-            pinkGhost.Top = 399;
+            pinkGhost.Left = 396;
+            pinkGhost.Top = 237;
 
             yellowGhost.Left = 104;
             yellowGhost.Top = 399;
@@ -479,6 +479,11 @@ namespace PacManKlein
         }
 
         private void pictureBox18_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox62_Click_1(object sender, EventArgs e)
         {
 
         }
