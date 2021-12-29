@@ -18,38 +18,16 @@ namespace PacManKlein
         bool godown;
         bool goleft;
         bool goright;
-        bool isGameOver;
-
-        int speed = 10;
-
-        //ghost 1 and 2 variables. These guys are sane well sort of
-        int redGhostSpeed = 12;
-        int yellowGhostSpeed = 12;
-
-        //ghost 3 crazy variables
-        int pinkGhostX;
-        int pinkGhostY;
-
-        int score;
-
         // end of listing variables
+
+        Game game = new Game();
         public GameBoard()
         {
             InitializeComponent();
             resetGame();
         }
 
-        private void Form1_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pictureBox6_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void keyisdown(object sender, KeyEventArgs e)
+        private void keyisdown(object sender, KeyEventArgs e) //metoda pro pohyb
         {
             if (e.KeyCode == Keys.Left)
             {
@@ -77,7 +55,7 @@ namespace PacManKlein
             }
         }
 
-        private void keyisup(object sender, KeyEventArgs e)
+        private void keyisup(object sender, KeyEventArgs e)    //metoda pro pohyb
         {
             if (e.KeyCode == Keys.Left)
             {
@@ -96,7 +74,7 @@ namespace PacManKlein
             {
                 godown = false;
             }
-            if (e.KeyCode == Keys.Enter && isGameOver == true)
+            if (e.KeyCode == Keys.Enter && game.GetGameOver() == true)
             {
                 resetGame();
             }
@@ -104,23 +82,17 @@ namespace PacManKlein
         private void resetGame()
         {
             scoreLabel.Text = "Score: 0";
-            score = 0;
-
-            isGameOver = false;
-
-            pacman.Left = 31;
-            pacman.Top = 46;
-            pinkGhostX = 5;
-            pinkGhostY = 5;
-
-            redGhost.Left = 193;
-            redGhost.Top = 66;
-
-            pinkGhost.Left = 396;
-            pinkGhost.Top = 237;
-
-            yellowGhost.Left = 104;
-            yellowGhost.Top = 399;
+            game.SetGameOverFalse();
+            //urcovani zakladnich pozic duchu a pacmana
+            pacman.Left = 30;
+            pacman.Top = 45;
+            redGhost.Left = 180;
+            redGhost.Top = 80;
+            pinkGhost.Left = 215;
+            pinkGhost.Top = 400;
+            yellowGhost.Left = 85;
+            yellowGhost.Top = 400;
+            //konec zakladnich pozic
 
             foreach (Control x in this.Controls)
             {
@@ -131,46 +103,38 @@ namespace PacManKlein
             }
             resultLabel.Visible = false;
             gameTimer.Start();
+            game.ResetGame(); 
 
         }
         private void gameOver(string message)
         {
-
-            isGameOver = true;
-
-            gameTimer.Stop();
-
-            resultLabel.Text = "Score: " + score + Environment.NewLine + message;
-            resultLabel.Visible = true;
+            game.SetGameOverTrue();
+            game.GameOver(message, gameTimer, resultLabel);
         }
         private void mainGameTimer_Tick(object sender, EventArgs e)
         {
-            scoreLabel.Text = "Score: " + score; // show the score on the board
+            scoreLabel.Text = "Score: " + game.GetScore(); // ukazovani score 
 
-            //player movement codes start
+            //pohyb hrace
             if (goleft)
             {
-                pacman.Left -= speed;
-                //moving player to the left. 
+                pacman.Left -= game.pacmanspeed;
             }
             if (goright)
             {
-                pacman.Left += speed;
-                //moving player to the right
+                pacman.Left += game.pacmanspeed;
             }
             if (goup)
             {
-                pacman.Top -= speed;
-                //moving to the top
+                pacman.Top -= game.pacmanspeed;
             }
-
             if (godown)
             {
-                pacman.Top += speed;
-                //moving down
+                pacman.Top += game.pacmanspeed;
             }
-            //player movements code end
+            //konec pohybu hrace
 
+            //teleport pacmana ze strany na stranu a ze shoru dolu
             if (pacman.Left < -10)
             {
                 pacman.Left = 625;
@@ -179,7 +143,6 @@ namespace PacManKlein
             {
                 pacman.Left = -10;
             }
-
             if (pacman.Top < -10)
             {
                 pacman.Top = 570;
@@ -188,302 +151,83 @@ namespace PacManKlein
             {
                 pacman.Top = 0;
             }
+            //konec teleportu
 
-            //for loop to check walls, ghosts and points
+            //loop pro kolize
             foreach (Control x in this.Controls)
             {
                 if (x is PictureBox)
                 {
                     if ((string)x.Tag == "coin" && x.Visible == true)
                     {
-                        if (pacman.Bounds.IntersectsWith(x.Bounds))
+                        if (pacman.Bounds.IntersectsWith(x.Bounds)) //kolize pacmana s minci
                         {
-                            score += 1;
-                            x.Visible = false;
+                            game.IncremenetScore(); //pricteni score
+                            x.Visible = false; //skryti mince
                         }
                     }
-
                     if ((string)x.Tag == "wall")
                     {
-                        if (pacman.Bounds.IntersectsWith(x.Bounds))
+                        if (pacman.Bounds.IntersectsWith(x.Bounds)) //kolize pacmana se stenou
                         {
                             gameOver("YOU LOSE!");
                         }
-
-
-                        if (pinkGhost.Bounds.IntersectsWith(x.Bounds))
+                        if (pinkGhost.Bounds.IntersectsWith(x.Bounds))  //kolize se stenou pro ruzoveho ducha
                         {
-                            pinkGhostX = -pinkGhostX;
+                            game.pinkGhostXSpeed = -game.pinkGhostXSpeed;
                         }
                     }
-
-
                     if ((string)x.Tag == "ghost")
                     {
-                        if (pacman.Bounds.IntersectsWith(x.Bounds))
+                        if (pacman.Bounds.IntersectsWith(x.Bounds)) //kolize pacmana s duchem
                         {
                             gameOver("YOU LOSE!");
                         }
-
                     }
-
-                    if (score == 42)
+                    if (game.GetScore() == 42) //vyherni score je odpoved na zakladni otazku zivota, vesmiru a vubec
                     {
                         gameOver("YOU WIN!");
                     }
                 }
             }
+            //konec loopu pro kolize
 
-            // end of for loop checking walls, points and ghosts. 
-
-            redGhost.Left += redGhostSpeed;
-
+            redGhost.Left += game.redGhostSpeed;
+            //kolize zakladnich duchu se stenami
             if (redGhost.Bounds.IntersectsWith(wallRed1.Bounds) || redGhost.Bounds.IntersectsWith(wallRed2.Bounds))
             {
-                redGhostSpeed = -redGhostSpeed;
+                game.redGhostSpeed = -game.redGhostSpeed;
             }
-
-            yellowGhost.Left -= yellowGhostSpeed;
-
+            yellowGhost.Left -= game.yellowGhostSpeed;
             if (yellowGhost.Bounds.IntersectsWith(wallYellow1.Bounds) || yellowGhost.Bounds.IntersectsWith(wallYellow2.Bounds))
             {
-                yellowGhostSpeed = -yellowGhostSpeed;
+                game.yellowGhostSpeed = -game.yellowGhostSpeed;
             }
 
 
-            pinkGhost.Left -= pinkGhostX;
-            pinkGhost.Top -= pinkGhostY;
+            pinkGhost.Left -= game.pinkGhostXSpeed;
+            pinkGhost.Top -= game.pinkGhostYSpeed;
 
-
+            //pozice ruzoveho ducha vs steny obrazovky
             if (pinkGhost.Top < 0 || pinkGhost.Top > 500)
             {
-                pinkGhostY = -pinkGhostY;
+                game.pinkGhostYSpeed = -game.pinkGhostYSpeed;
             }
 
             if (pinkGhost.Left < 0 || pinkGhost.Left > 555)
             {
-                pinkGhostX = -pinkGhostX;
+                game.pinkGhostXSpeed = -game.pinkGhostXSpeed;
             }
 
 
         }
 
-        private void label2_Click(object sender, EventArgs e)
+        private void pinkGhost_Click(object sender, EventArgs e)
         {
 
         }
 
-        private void pictureBox49_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void redGhost_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pictureBox19_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pictureBox20_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pictureBox21_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pictureBox109_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pictureBox110_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pictureBox111_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pictureBox112_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pictureBox113_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pictureBox114_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pictureBox115_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pictureBox116_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pictureBox117_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pictureBox62_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pictureBox63_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pictureBox64_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pictureBox65_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pictureBox66_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pictureBox67_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pictureBox68_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pictureBox69_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pictureBox70_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pictureBox33_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pictureBox41_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pictureBox42_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pictureBox43_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pictureBox44_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pictureBox45_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pictureBox46_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pictureBox48_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pictureBox49_Click_1(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pictureBox38_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pictureBox39_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pictureBox34_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pictureBox35_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pictureBox36_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pictureBox37_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pictureBox40_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pictureBox47_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pictureBox50_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pictureBox18_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pictureBox62_Click_1(object sender, EventArgs e)
+        private void pictureBox61_Click(object sender, EventArgs e)
         {
 
         }
