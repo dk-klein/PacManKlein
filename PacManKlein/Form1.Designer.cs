@@ -19,7 +19,6 @@
             }
             base.Dispose(disposing);
         }
-
         #region Windows Form Designer generated code
 
         /// <summary>
@@ -126,6 +125,26 @@
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.pictureBox55 = new System.Windows.Forms.PictureBox();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            this.pictureBox53 = new System.Windows.Forms.PictureBox();
+            this.pictureBox54 = new System.Windows.Forms.PictureBox();
+            this.pictureBox61 = new System.Windows.Forms.PictureBox();
+            this.pictureBox65 = new System.Windows.Forms.PictureBox();
+            this.pictureBox67 = new System.Windows.Forms.PictureBox();
+            this.pictureBox70 = new System.Windows.Forms.PictureBox();
+            this.pictureBox71 = new System.Windows.Forms.PictureBox();
+            this.pictureBox72 = new System.Windows.Forms.PictureBox();
+            this.pictureBox73 = new System.Windows.Forms.PictureBox();
+            this.pictureBox75 = new System.Windows.Forms.PictureBox();
+            this.pictureBox76 = new System.Windows.Forms.PictureBox();
+            this.pictureBox79 = new System.Windows.Forms.PictureBox();
+            this.pictureBox81 = new System.Windows.Forms.PictureBox();
+            this.pictureBox82 = new System.Windows.Forms.PictureBox();
+            this.pictureBox83 = new System.Windows.Forms.PictureBox();
+            this.pictureBox84 = new System.Windows.Forms.PictureBox();
+            this.pictureBox85 = new System.Windows.Forms.PictureBox();
+            this.pictureBox87 = new System.Windows.Forms.PictureBox();
+            this.pictureBox88 = new System.Windows.Forms.PictureBox();
+            this.pictureBox89 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.wallYellow2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pinkGhost)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.redGhost)).BeginInit();
@@ -219,6 +238,26 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox55)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox53)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox54)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox61)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox65)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox67)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox70)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox71)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox72)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox73)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox75)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox76)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox79)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox81)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox82)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox83)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox84)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox85)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox87)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox88)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox89)).BeginInit();
             this.SuspendLayout();
             // 
             // wallYellow2
@@ -248,7 +287,7 @@
             // 
             this.redGhost.BackColor = System.Drawing.Color.Transparent;
             this.redGhost.Image = global::PacManKlein.Properties.Resources.red_guy;
-            this.redGhost.Location = new System.Drawing.Point(178, 78);
+            this.redGhost.Location = new System.Drawing.Point(178, 86);
             this.redGhost.Name = "redGhost";
             this.redGhost.Size = new System.Drawing.Size(36, 38);
             this.redGhost.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -270,8 +309,9 @@
             // 
             // pacman
             // 
+            this.pacman.BackColor = System.Drawing.Color.Transparent;
             this.pacman.Image = global::PacManKlein.Properties.Resources.right;
-            this.pacman.Location = new System.Drawing.Point(53, 30);
+            this.pacman.Location = new System.Drawing.Point(12, 53);
             this.pacman.Name = "pacman";
             this.pacman.Size = new System.Drawing.Size(40, 40);
             this.pacman.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -322,7 +362,7 @@
             // scoreLabel
             // 
             this.scoreLabel.AutoSize = true;
-            this.scoreLabel.BackColor = System.Drawing.Color.Black;
+            this.scoreLabel.BackColor = System.Drawing.Color.Transparent;
             this.scoreLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.scoreLabel.ForeColor = System.Drawing.Color.White;
             this.scoreLabel.Location = new System.Drawing.Point(8, 9);
@@ -336,7 +376,7 @@
             this.resultLabel.BackColor = System.Drawing.Color.Transparent;
             this.resultLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 50F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.resultLabel.ForeColor = System.Drawing.Color.GhostWhite;
-            this.resultLabel.Location = new System.Drawing.Point(104, 175);
+            this.resultLabel.Location = new System.Drawing.Point(94, 175);
             this.resultLabel.Name = "resultLabel";
             this.resultLabel.Size = new System.Drawing.Size(0, 76);
             this.resultLabel.TabIndex = 85;
@@ -778,7 +818,7 @@
             // pictureBox47
             // 
             this.pictureBox47.Image = global::PacManKlein.Properties.Resources.coin;
-            this.pictureBox47.Location = new System.Drawing.Point(412, 130);
+            this.pictureBox47.Location = new System.Drawing.Point(411, 130);
             this.pictureBox47.Name = "pictureBox47";
             this.pictureBox47.Size = new System.Drawing.Size(20, 20);
             this.pictureBox47.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -811,7 +851,7 @@
             // pictureBox116
             // 
             this.pictureBox116.Image = global::PacManKlein.Properties.Resources.coin;
-            this.pictureBox116.Location = new System.Drawing.Point(412, 156);
+            this.pictureBox116.Location = new System.Drawing.Point(411, 156);
             this.pictureBox116.Name = "pictureBox116";
             this.pictureBox116.Size = new System.Drawing.Size(20, 20);
             this.pictureBox116.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -1238,14 +1278,15 @@
             // scoreToBeatLabel
             // 
             this.scoreToBeatLabel.AutoSize = true;
-            this.scoreToBeatLabel.BackColor = System.Drawing.Color.Black;
+            this.scoreToBeatLabel.BackColor = System.Drawing.Color.Transparent;
             this.scoreToBeatLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.scoreToBeatLabel.ForeColor = System.Drawing.Color.White;
             this.scoreToBeatLabel.Location = new System.Drawing.Point(8, 30);
             this.scoreToBeatLabel.Name = "scoreToBeatLabel";
-            this.scoreToBeatLabel.Size = new System.Drawing.Size(154, 20);
+            this.scoreToBeatLabel.Size = new System.Drawing.Size(134, 20);
             this.scoreToBeatLabel.TabIndex = 243;
-            this.scoreToBeatLabel.Text = "Score To Beat: 42\r\n";
+            this.scoreToBeatLabel.Text = "Score To Beat: " + game.WinningScore;
+            this.scoreToBeatLabel.Click += new System.EventHandler(this.scoreToBeatLabel_Click);
             // 
             // pictureBox5
             // 
@@ -1280,13 +1321,257 @@
             this.pictureBox4.TabStop = false;
             this.pictureBox4.Tag = "coin";
             // 
+            // pictureBox53
+            // 
+            this.pictureBox53.Image = global::PacManKlein.Properties.Resources.coin;
+            this.pictureBox53.Location = new System.Drawing.Point(18, 156);
+            this.pictureBox53.Name = "pictureBox53";
+            this.pictureBox53.Size = new System.Drawing.Size(20, 20);
+            this.pictureBox53.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox53.TabIndex = 245;
+            this.pictureBox53.TabStop = false;
+            this.pictureBox53.Tag = "coin";
+            // 
+            // pictureBox54
+            // 
+            this.pictureBox54.Image = global::PacManKlein.Properties.Resources.coin;
+            this.pictureBox54.Location = new System.Drawing.Point(18, 130);
+            this.pictureBox54.Name = "pictureBox54";
+            this.pictureBox54.Size = new System.Drawing.Size(20, 20);
+            this.pictureBox54.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox54.TabIndex = 244;
+            this.pictureBox54.TabStop = false;
+            this.pictureBox54.Tag = "coin";
+            // 
+            // pictureBox61
+            // 
+            this.pictureBox61.Image = global::PacManKlein.Properties.Resources.coin;
+            this.pictureBox61.Location = new System.Drawing.Point(44, 156);
+            this.pictureBox61.Name = "pictureBox61";
+            this.pictureBox61.Size = new System.Drawing.Size(20, 20);
+            this.pictureBox61.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox61.TabIndex = 247;
+            this.pictureBox61.TabStop = false;
+            this.pictureBox61.Tag = "coin";
+            // 
+            // pictureBox65
+            // 
+            this.pictureBox65.Image = global::PacManKlein.Properties.Resources.coin;
+            this.pictureBox65.Location = new System.Drawing.Point(44, 130);
+            this.pictureBox65.Name = "pictureBox65";
+            this.pictureBox65.Size = new System.Drawing.Size(20, 20);
+            this.pictureBox65.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox65.TabIndex = 246;
+            this.pictureBox65.TabStop = false;
+            this.pictureBox65.Tag = "coin";
+            // 
+            // pictureBox67
+            // 
+            this.pictureBox67.Image = global::PacManKlein.Properties.Resources.coin;
+            this.pictureBox67.Location = new System.Drawing.Point(72, 156);
+            this.pictureBox67.Name = "pictureBox67";
+            this.pictureBox67.Size = new System.Drawing.Size(20, 20);
+            this.pictureBox67.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox67.TabIndex = 249;
+            this.pictureBox67.TabStop = false;
+            this.pictureBox67.Tag = "coin";
+            // 
+            // pictureBox70
+            // 
+            this.pictureBox70.Image = global::PacManKlein.Properties.Resources.coin;
+            this.pictureBox70.Location = new System.Drawing.Point(72, 130);
+            this.pictureBox70.Name = "pictureBox70";
+            this.pictureBox70.Size = new System.Drawing.Size(20, 20);
+            this.pictureBox70.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox70.TabIndex = 248;
+            this.pictureBox70.TabStop = false;
+            this.pictureBox70.Tag = "coin";
+            // 
+            // pictureBox71
+            // 
+            this.pictureBox71.Image = global::PacManKlein.Properties.Resources.coin;
+            this.pictureBox71.Location = new System.Drawing.Point(98, 156);
+            this.pictureBox71.Name = "pictureBox71";
+            this.pictureBox71.Size = new System.Drawing.Size(20, 20);
+            this.pictureBox71.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox71.TabIndex = 251;
+            this.pictureBox71.TabStop = false;
+            this.pictureBox71.Tag = "coin";
+            // 
+            // pictureBox72
+            // 
+            this.pictureBox72.Image = global::PacManKlein.Properties.Resources.coin;
+            this.pictureBox72.Location = new System.Drawing.Point(98, 130);
+            this.pictureBox72.Name = "pictureBox72";
+            this.pictureBox72.Size = new System.Drawing.Size(20, 20);
+            this.pictureBox72.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox72.TabIndex = 250;
+            this.pictureBox72.TabStop = false;
+            this.pictureBox72.Tag = "coin";
+            // 
+            // pictureBox73
+            // 
+            this.pictureBox73.Image = global::PacManKlein.Properties.Resources.coin;
+            this.pictureBox73.Location = new System.Drawing.Point(124, 156);
+            this.pictureBox73.Name = "pictureBox73";
+            this.pictureBox73.Size = new System.Drawing.Size(20, 20);
+            this.pictureBox73.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox73.TabIndex = 253;
+            this.pictureBox73.TabStop = false;
+            this.pictureBox73.Tag = "coin";
+            // 
+            // pictureBox75
+            // 
+            this.pictureBox75.Image = global::PacManKlein.Properties.Resources.coin;
+            this.pictureBox75.Location = new System.Drawing.Point(124, 130);
+            this.pictureBox75.Name = "pictureBox75";
+            this.pictureBox75.Size = new System.Drawing.Size(20, 20);
+            this.pictureBox75.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox75.TabIndex = 252;
+            this.pictureBox75.TabStop = false;
+            this.pictureBox75.Tag = "coin";
+            // 
+            // pictureBox76
+            // 
+            this.pictureBox76.Image = global::PacManKlein.Properties.Resources.coin;
+            this.pictureBox76.Location = new System.Drawing.Point(186, 255);
+            this.pictureBox76.Name = "pictureBox76";
+            this.pictureBox76.Size = new System.Drawing.Size(20, 20);
+            this.pictureBox76.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox76.TabIndex = 258;
+            this.pictureBox76.TabStop = false;
+            this.pictureBox76.Tag = "coin";
+            // 
+            // pictureBox79
+            // 
+            this.pictureBox79.Image = global::PacManKlein.Properties.Resources.coin;
+            this.pictureBox79.Location = new System.Drawing.Point(160, 255);
+            this.pictureBox79.Name = "pictureBox79";
+            this.pictureBox79.Size = new System.Drawing.Size(20, 20);
+            this.pictureBox79.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox79.TabIndex = 257;
+            this.pictureBox79.TabStop = false;
+            this.pictureBox79.Tag = "coin";
+            // 
+            // pictureBox81
+            // 
+            this.pictureBox81.Image = global::PacManKlein.Properties.Resources.coin;
+            this.pictureBox81.Location = new System.Drawing.Point(134, 255);
+            this.pictureBox81.Name = "pictureBox81";
+            this.pictureBox81.Size = new System.Drawing.Size(20, 20);
+            this.pictureBox81.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox81.TabIndex = 256;
+            this.pictureBox81.TabStop = false;
+            this.pictureBox81.Tag = "coin";
+            // 
+            // pictureBox82
+            // 
+            this.pictureBox82.Image = global::PacManKlein.Properties.Resources.coin;
+            this.pictureBox82.Location = new System.Drawing.Point(106, 255);
+            this.pictureBox82.Name = "pictureBox82";
+            this.pictureBox82.Size = new System.Drawing.Size(20, 20);
+            this.pictureBox82.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox82.TabIndex = 255;
+            this.pictureBox82.TabStop = false;
+            this.pictureBox82.Tag = "coin";
+            // 
+            // pictureBox83
+            // 
+            this.pictureBox83.Image = global::PacManKlein.Properties.Resources.coin;
+            this.pictureBox83.Location = new System.Drawing.Point(80, 255);
+            this.pictureBox83.Name = "pictureBox83";
+            this.pictureBox83.Size = new System.Drawing.Size(20, 20);
+            this.pictureBox83.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox83.TabIndex = 254;
+            this.pictureBox83.TabStop = false;
+            this.pictureBox83.Tag = "coin";
+            // 
+            // pictureBox84
+            // 
+            this.pictureBox84.Image = global::PacManKlein.Properties.Resources.coin;
+            this.pictureBox84.Location = new System.Drawing.Point(513, 255);
+            this.pictureBox84.Name = "pictureBox84";
+            this.pictureBox84.Size = new System.Drawing.Size(20, 20);
+            this.pictureBox84.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox84.TabIndex = 263;
+            this.pictureBox84.TabStop = false;
+            this.pictureBox84.Tag = "coin";
+            // 
+            // pictureBox85
+            // 
+            this.pictureBox85.Image = global::PacManKlein.Properties.Resources.coin;
+            this.pictureBox85.Location = new System.Drawing.Point(487, 255);
+            this.pictureBox85.Name = "pictureBox85";
+            this.pictureBox85.Size = new System.Drawing.Size(20, 20);
+            this.pictureBox85.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox85.TabIndex = 262;
+            this.pictureBox85.TabStop = false;
+            this.pictureBox85.Tag = "coin";
+            // 
+            // pictureBox87
+            // 
+            this.pictureBox87.Image = global::PacManKlein.Properties.Resources.coin;
+            this.pictureBox87.Location = new System.Drawing.Point(461, 255);
+            this.pictureBox87.Name = "pictureBox87";
+            this.pictureBox87.Size = new System.Drawing.Size(20, 20);
+            this.pictureBox87.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox87.TabIndex = 261;
+            this.pictureBox87.TabStop = false;
+            this.pictureBox87.Tag = "coin";
+            // 
+            // pictureBox88
+            // 
+            this.pictureBox88.Image = global::PacManKlein.Properties.Resources.coin;
+            this.pictureBox88.Location = new System.Drawing.Point(433, 255);
+            this.pictureBox88.Name = "pictureBox88";
+            this.pictureBox88.Size = new System.Drawing.Size(20, 20);
+            this.pictureBox88.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox88.TabIndex = 260;
+            this.pictureBox88.TabStop = false;
+            this.pictureBox88.Tag = "coin";
+            // 
+            // pictureBox89
+            // 
+            this.pictureBox89.Image = global::PacManKlein.Properties.Resources.coin;
+            this.pictureBox89.Location = new System.Drawing.Point(407, 255);
+            this.pictureBox89.Name = "pictureBox89";
+            this.pictureBox89.Size = new System.Drawing.Size(20, 20);
+            this.pictureBox89.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox89.TabIndex = 259;
+            this.pictureBox89.TabStop = false;
+            this.pictureBox89.Tag = "coin";
+            // 
             // GameBoard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
             this.ClientSize = new System.Drawing.Size(631, 531);
+            this.Controls.Add(this.resultLabel);
             this.Controls.Add(this.scoreToBeatLabel);
+            this.Controls.Add(this.scoreLabel);
+            this.Controls.Add(this.pacman);
+            this.Controls.Add(this.pinkGhost);
+            this.Controls.Add(this.pictureBox84);
+            this.Controls.Add(this.pictureBox85);
+            this.Controls.Add(this.pictureBox87);
+            this.Controls.Add(this.pictureBox88);
+            this.Controls.Add(this.pictureBox89);
+            this.Controls.Add(this.pictureBox76);
+            this.Controls.Add(this.pictureBox79);
+            this.Controls.Add(this.pictureBox81);
+            this.Controls.Add(this.pictureBox82);
+            this.Controls.Add(this.pictureBox83);
+            this.Controls.Add(this.pictureBox73);
+            this.Controls.Add(this.pictureBox75);
+            this.Controls.Add(this.pictureBox71);
+            this.Controls.Add(this.pictureBox72);
+            this.Controls.Add(this.pictureBox67);
+            this.Controls.Add(this.pictureBox70);
+            this.Controls.Add(this.pictureBox61);
+            this.Controls.Add(this.pictureBox65);
+            this.Controls.Add(this.pictureBox53);
+            this.Controls.Add(this.pictureBox54);
             this.Controls.Add(this.pictureBox64);
             this.Controls.Add(this.pictureBox62);
             this.Controls.Add(this.pictureBox57);
@@ -1305,7 +1590,6 @@
             this.Controls.Add(this.pictureBox29);
             this.Controls.Add(this.pictureBox28);
             this.Controls.Add(this.pictureBox26);
-            this.Controls.Add(this.resultLabel);
             this.Controls.Add(this.pictureBox25);
             this.Controls.Add(this.pictureBox24);
             this.Controls.Add(this.pictureBox23);
@@ -1328,7 +1612,6 @@
             this.Controls.Add(this.pictureBox7);
             this.Controls.Add(this.pictureBox128);
             this.Controls.Add(this.pictureBox127);
-            this.Controls.Add(this.pinkGhost);
             this.Controls.Add(this.pictureBox118);
             this.Controls.Add(this.pictureBox119);
             this.Controls.Add(this.pictureBox121);
@@ -1369,7 +1652,6 @@
             this.Controls.Add(this.pictureBox46);
             this.Controls.Add(this.pictureBox48);
             this.Controls.Add(this.pictureBox39);
-            this.Controls.Add(this.scoreLabel);
             this.Controls.Add(this.pictureBox55);
             this.Controls.Add(this.pictureBox56);
             this.Controls.Add(this.pictureBox36);
@@ -1378,12 +1660,12 @@
             this.Controls.Add(this.wallYellow1);
             this.Controls.Add(this.wallRed1);
             this.Controls.Add(this.wallRed2);
-            this.Controls.Add(this.pacman);
             this.Controls.Add(this.yellowGhost);
             this.Controls.Add(this.redGhost);
             this.Controls.Add(this.wallYellow2);
             this.Name = "GameBoard";
             this.Text = "Pac-Man";
+            this.Load += new System.EventHandler(this.GameBoard_Load);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.keyisdown);
             this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.keyisup);
             ((System.ComponentModel.ISupportInitialize)(this.wallYellow2)).EndInit();
@@ -1479,6 +1761,26 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox55)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox53)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox54)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox61)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox65)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox67)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox70)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox71)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox72)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox73)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox75)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox76)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox79)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox81)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox82)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox83)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox84)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox85)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox87)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox88)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox89)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1582,6 +1884,26 @@
         private System.Windows.Forms.PictureBox pictureBox5;
         private System.Windows.Forms.PictureBox pictureBox55;
         private System.Windows.Forms.PictureBox pictureBox4;
+        private System.Windows.Forms.PictureBox pictureBox53;
+        private System.Windows.Forms.PictureBox pictureBox54;
+        private System.Windows.Forms.PictureBox pictureBox61;
+        private System.Windows.Forms.PictureBox pictureBox65;
+        private System.Windows.Forms.PictureBox pictureBox67;
+        private System.Windows.Forms.PictureBox pictureBox70;
+        private System.Windows.Forms.PictureBox pictureBox71;
+        private System.Windows.Forms.PictureBox pictureBox72;
+        private System.Windows.Forms.PictureBox pictureBox73;
+        private System.Windows.Forms.PictureBox pictureBox75;
+        private System.Windows.Forms.PictureBox pictureBox76;
+        private System.Windows.Forms.PictureBox pictureBox79;
+        private System.Windows.Forms.PictureBox pictureBox81;
+        private System.Windows.Forms.PictureBox pictureBox82;
+        private System.Windows.Forms.PictureBox pictureBox83;
+        private System.Windows.Forms.PictureBox pictureBox84;
+        private System.Windows.Forms.PictureBox pictureBox85;
+        private System.Windows.Forms.PictureBox pictureBox87;
+        private System.Windows.Forms.PictureBox pictureBox88;
+        private System.Windows.Forms.PictureBox pictureBox89;
     }
 }
 
