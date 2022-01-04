@@ -12,13 +12,11 @@ namespace PacManKlein
 {
     public partial class GameBoard : Form
     {
-        // start the variables
-
+        //pohybove promenne
         bool goup;
         bool godown;
         bool goleft;
         bool goright;
-        // end of listing variables
 
         Game game = new Game();
         public GameBoard()
@@ -26,8 +24,6 @@ namespace PacManKlein
             InitializeComponent();
             resetGame();
         }
-
-       
         private void resetGame()
         {
             scoreLabel.Text = "Score: 0";
@@ -102,7 +98,7 @@ namespace PacManKlein
         private void pinkGhostMovementChange()
         {
             pinkGhost.Left -= game.pinkGhostXSpeed;
-            pinkGhost.Top -= game.pinkGhostYSpeed;s
+            pinkGhost.Top -= game.pinkGhostYSpeed;
 
             //pozice ruzoveho ducha vs steny obrazovky
             if (pinkGhost.Top < 0 || pinkGhost.Top > 500)
@@ -139,7 +135,7 @@ namespace PacManKlein
                     {
                         if (pacman.Bounds.IntersectsWith(x.Bounds)) //kolize pacmana s minci
                         {
-                            game.IncremenetScore(); //pricteni score
+                            game.IncrementScore(); //pricteni score
                             x.Visible = false; //skryti mince
                         }
                     }
@@ -230,24 +226,5 @@ namespace PacManKlein
             }
         }
 
-        private void pinkGhost_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pictureBox61_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void GameBoard_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void scoreToBeatLabel_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 }

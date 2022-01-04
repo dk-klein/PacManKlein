@@ -10,9 +10,9 @@ namespace PacManKlein
     class Game
     {
         //rychlosti
-        public int pacmanspeed = 10;
-        public int redGhostSpeed = 12;
-        public int yellowGhostSpeed = 12;
+        public int pacmanspeed = 8;
+        public int redGhostSpeed = 10;
+        public int yellowGhostSpeed = 10;
         public int pinkGhostXSpeed = 5;
         public int pinkGhostYSpeed = 5;
         //herni promenne
@@ -46,7 +46,7 @@ namespace PacManKlein
         {
             return score;
         }
-        public void IncremenetScore()
+        public void IncrementScore()
         {
             score++;
         }
