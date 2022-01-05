@@ -281,13 +281,12 @@
             this.pinkGhost.TabIndex = 5;
             this.pinkGhost.TabStop = false;
             this.pinkGhost.Tag = "ghost";
-            this.pinkGhost.Click += new System.EventHandler(this.pinkGhost_Click);
             // 
             // redGhost
             // 
             this.redGhost.BackColor = System.Drawing.Color.Transparent;
             this.redGhost.Image = global::PacManKlein.Properties.Resources.red_guy;
-            this.redGhost.Location = new System.Drawing.Point(178, 86);
+            this.redGhost.Location = new System.Drawing.Point(178, 76);
             this.redGhost.Name = "redGhost";
             this.redGhost.Size = new System.Drawing.Size(36, 38);
             this.redGhost.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -1283,10 +1282,9 @@
             this.scoreToBeatLabel.ForeColor = System.Drawing.Color.White;
             this.scoreToBeatLabel.Location = new System.Drawing.Point(8, 30);
             this.scoreToBeatLabel.Name = "scoreToBeatLabel";
-            this.scoreToBeatLabel.Size = new System.Drawing.Size(134, 20);
+            this.scoreToBeatLabel.Size = new System.Drawing.Size(154, 20);
             this.scoreToBeatLabel.TabIndex = 243;
-            this.scoreToBeatLabel.Text = "Score To Beat: " + game.WinningScore;
-            this.scoreToBeatLabel.Click += new System.EventHandler(this.scoreToBeatLabel_Click);
+            this.scoreToBeatLabel.Text = "Score To Beat: 84";
             // 
             // pictureBox5
             // 
@@ -1665,9 +1663,8 @@
             this.Controls.Add(this.wallYellow2);
             this.Name = "GameBoard";
             this.Text = "Pac-Man";
-            this.Load += new System.EventHandler(this.GameBoard_Load);
-            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.keyisdown);
-            this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.keyisup);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.KeyIsDown);
+            this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.KeyIsUp);
             ((System.ComponentModel.ISupportInitialize)(this.wallYellow2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pinkGhost)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.redGhost)).EndInit();

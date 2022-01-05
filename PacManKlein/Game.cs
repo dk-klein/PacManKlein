@@ -18,7 +18,7 @@ namespace PacManKlein
         //herni promenne
         public int score;
         public bool isGameOver;
-        public int WinningScore = 84; //vyherni score je dvojnasobek odpovedi na zakladni otazku zivota, vesmiru a vubec
+        public int winningScore = 84; //vyherni score je dvojnasobek odpovedi na zakladni otazku zivota, vesmiru a vubec
         public void SetGameOverTrue()
         {
             isGameOver = true;

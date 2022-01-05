@@ -22,9 +22,18 @@ namespace PacManKlein
         public GameBoard()
         {
             InitializeComponent();
-            resetGame();
+            ResetGame();
         }
-        private void resetGame()
+        private void mainGameTimer_Tick(object sender, EventArgs e)
+        {
+            scoreLabel.Text = "Score: " + game.GetScore(); // ukazovani score 
+            Movement();         //pohyb hrace
+            TeleportPacman();   //teleport pacmana na stranach
+            CheckCollision();   //kolize
+            BasicGhostMovementChange(); //pohyb duchu
+            PinkGhostMovementChange(); //pohyb ruzoveho ducha
+        }
+        private void ResetGame()
         {
             scoreLabel.Text = "Score: 0";
             game.SetGameOverFalse();
@@ -38,7 +47,6 @@ namespace PacManKlein
             yellowGhost.Left = 85;
             yellowGhost.Top = 400;
             //konec zakladnich pozic
-
             foreach (Control x in this.Controls)    //zobrazeni zpet vsech minci 
             {
                 if (x is PictureBox)
@@ -51,12 +59,12 @@ namespace PacManKlein
             game.ResetGame(); 
 
         }
-        private void gameOver(string message)
+        private void GameOver(string message)
         {
             game.SetGameOverTrue();
             game.GameOver(message, gameTimer, resultLabel);
         }
-        private void teleportPacman() //teleport pacmana ze strany na stranu a ze shoru dolu
+        private void TeleportPacman() //teleport pacmana ze strany na stranu a ze shoru dolu
         {
             if (pacman.Left < -10)
             {
@@ -75,7 +83,7 @@ namespace PacManKlein
                 pacman.Top = 0;
             }
         }
-        private void movement()         //pohyb hrace
+        private void Movement()         //pohyb hrace
         {
             if (goleft)
             {
@@ -93,9 +101,8 @@ namespace PacManKlein
             {
                 pacman.Top += game.pacmanspeed;
             }
-
         }
-        private void pinkGhostMovementChange()
+        private void PinkGhostMovementChange()
         {
             pinkGhost.Left -= game.pinkGhostXSpeed;
             pinkGhost.Top -= game.pinkGhostYSpeed;
@@ -111,7 +118,7 @@ namespace PacManKlein
                 game.pinkGhostXSpeed = -game.pinkGhostXSpeed;
             }
         }
-        private void basicGhostMovementChange()
+        private void BasicGhostMovementChange()
         {
             redGhost.Left += game.redGhostSpeed;
             //kolize zakladnich duchu se stenami
@@ -125,7 +132,7 @@ namespace PacManKlein
                 game.yellowGhostSpeed = -game.yellowGhostSpeed;
             }
         }
-        private void checkCollision()    //loop pro kolize
+        private void CheckCollision()    //kolize
         {
             foreach (Control x in this.Controls)
             {
@@ -143,7 +150,7 @@ namespace PacManKlein
                     {
                         if (pacman.Bounds.IntersectsWith(x.Bounds)) //kolize pacmana se stenou
                         {
-                            gameOver("YOU LOSE!");
+                            GameOver("YOU LOSE!");
                         }
                         if (pinkGhost.Bounds.IntersectsWith(x.Bounds))  //kolize se stenou pro ruzoveho ducha
                         {
@@ -154,26 +161,17 @@ namespace PacManKlein
                     {
                         if (pacman.Bounds.IntersectsWith(x.Bounds)) //kolize pacmana s duchem
                         {
-                            gameOver("YOU LOSE!");
+                            GameOver("YOU LOSE!");
                         }
                     }
-                    if (game.GetScore() == game.WinningScore) //vyherni score je dvojnasobek odpovedi na zakladni otazku zivota, vesmiru a vubec
+                    if (game.GetScore() == game.winningScore) //vyherni score je dvojnasobek odpovedi na zakladni otazku zivota, vesmiru a vubec
                     {
-                        gameOver("YOU WIN!");
+                        GameOver("YOU WIN!");
                     }
                 }
             }
         }
-        private void mainGameTimer_Tick(object sender, EventArgs e)
-        {
-            scoreLabel.Text = "Score: " + game.GetScore(); // ukazovani score 
-            movement();         //pohyb hrace
-            teleportPacman();   //teleport pacmana na stranach
-            checkCollision();   //kolize
-            basicGhostMovementChange(); //pohyb duchu
-            pinkGhostMovementChange(); //pohyb ruzoveho ducha
-        }
-        private void keyisdown(object sender, KeyEventArgs e) //metoda pro pohyb
+        private void KeyIsDown(object sender, KeyEventArgs e) //metoda pro pohyb, zmacknuti klavesy
         {
             if (e.KeyCode == Keys.Left)
             {
@@ -184,7 +182,6 @@ namespace PacManKlein
             if (e.KeyCode == Keys.Right)
             {
                 goright = true;
-
                 pacman.Image = Properties.Resources.right;
             }
             if (e.KeyCode == Keys.Up)
@@ -201,7 +198,7 @@ namespace PacManKlein
             }
         }
 
-        private void keyisup(object sender, KeyEventArgs e)    //metoda pro pohyb
+        private void KeyIsUp(object sender, KeyEventArgs e)    //metoda pro pohyb, pusteni klavesy
         {
             if (e.KeyCode == Keys.Left)
             {
@@ -222,7 +219,7 @@ namespace PacManKlein
             }
             if (e.KeyCode == Keys.Enter && game.GetGameOver() == true)
             {
-                resetGame();
+                ResetGame();
             }
         }
 
